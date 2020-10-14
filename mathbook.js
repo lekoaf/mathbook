@@ -11,10 +11,12 @@ const generateNumbers = ({ allowNegative, pages, signs = ["+", "-"] }) => {
     const second = numbers[Math.floor(Math.random() * numbers.length) + 0];
 
     if (!allowNegative && sign === "-" && Math.sign(first - second) === -1) {
+      // Dissallow negative numbers. They can be too hard for a young child.
       continue;
     }
 
     if (sign === "/" && second === 0) {
+      // Dissallow division by zero.
       continue;
     }
 
